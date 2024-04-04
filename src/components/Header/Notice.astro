@@ -2,13 +2,12 @@
 const Message = 'Compra por caja minimo de $6,00.00'
 ---
 <div class="relative w-full h-6 bg-black text-white font-semibold flex flex-row justify-between">
-    <div class="box">{Message} </div>
-    <div class="box">{Message} </div>
-    <div class="box">{Message} </div>
-    <div class="box">{Message} </div>
+    <div class="box-header-message">{Message} </div>
+    <div class="box-header-message">{Message} </div>
+    <div class="box-header-message">{Message} </div>
+    <div class="box-header-message">{Message} </div>
 </div>
-<style>
- 
+<style> 
     @keyframes translateXAnimation {
         0% {
             transform: translateX(0);
@@ -17,8 +16,7 @@ const Message = 'Compra por caja minimo de $6,00.00'
             transform: translateX(100vw); /* Move it across the viewport width */
         }
     }
-
-    .box {       
+    .box-header-message {       
         height: 100px;        
         position: relative;
         animation: translateXAnimation 10s linear infinite; 
