@@ -1,0 +1,118 @@
+---
+import FacebookIcon from '@/components/icons/FacebookIcon.astro';
+import InstagramIcon from '@/components/icons/InstagramIcon.astro';
+import LinkedInIcon from '@/components/icons/LinkedInIcon.astro';
+import TiktokIcon from '@/components/icons/TiktokIcon.astro';
+import YoutubeIcon from '@/components/icons/YoutubeIcon.astro';
+import FooterLink from './footer/FooterLink.astro';
+---
+
+<footer>
+  <div class='h-28 w-full bg-black'></div>
+
+  <div class='w-full grid grid-cols-1 lg:grid-cols-5 px-28 gap-10 py-10'>
+    <div class='flex flex-col gap-y-4 px-4'>
+      <h3 class='font-bold'>Atención a cliente</h3>
+      <div class='flex flex-col'>
+        <a href='tel:3336134587' class='font-bold'>33 3613 4587</a>
+        <span class='text-gray-500 font-semibold text-sm'
+          >Mensaje de Whatsapp</span
+        >
+      </div>
+
+      <div class='flex flex-col'>
+        <a href='mail:infomx@massivehome.com.mx' class='font-bold'
+          >infomx@massivehome.com.mx</a
+        >
+        <span class='text-gray-500 font-semibold text-sm'>Mandanos un mail</span
+        >
+      </div>
+
+      <div class='flex flex-col'>
+        <span class='font-bold'>Horarios de atencion</span>
+        <span class='text-gray-500 font-semibold text-sm'
+          >Lunes a Viernes de 9 a 18 hrs, Sabados de 9 a 12 hrs.</span
+        >
+      </div>
+    </div>
+
+    <div class='flex flex-col gap-y-4 px-4'>
+      <h3 class='font-bold'>Tienda online</h3>
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Contáctanos
+      </FooterLink>
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Preguntas frecuentes
+      </FooterLink>
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Cambios y devoluciones
+      </FooterLink>
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Medios de pago
+      </FooterLink>
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Información de envíos
+      </FooterLink>
+    </div>
+
+    <div class='flex flex-col gap-y-4 px-4'>
+      <h3 class='font-bold'>Somos Massive Home</h3>
+
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Sobre Massive Home
+      </FooterLink>
+
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Trabaja con nosotros
+      </FooterLink>
+
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Localizador de tiendas
+      </FooterLink>
+
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Términos y condiciones
+      </FooterLink>
+
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Politicas de privacidad
+      </FooterLink>
+
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Expansión
+      </FooterLink>
+
+      <FooterLink href='#' class='text-gray-500 font-semibold text-sm'>
+        Proveedores
+      </FooterLink>
+    </div>
+
+    <div class='flex flex-col gap-y-4 px-4'>
+      <h3 class='font-bold'>Compra 100% segura</h3>
+      <span class='text-gray-500 font-semibold text-sm'>
+        Nuestro sitio tiene toda la seguridad para tu compra
+      </span>
+    </div>
+
+    <div class='flex flex-col gap-y-4 px-4'>
+      <h3 class='font-bold'>Síguenos</h3>
+      <div class='flex gap-x-2'>
+        <a href=''>
+          <TiktokIcon />
+        </a>
+        <a href=''>
+          <FacebookIcon />
+        </a>
+        <a href=''>
+          <InstagramIcon />
+        </a>
+        <a href=''>
+          <YoutubeIcon />
+        </a>
+        <a href=''>
+          <LinkedInIcon />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
