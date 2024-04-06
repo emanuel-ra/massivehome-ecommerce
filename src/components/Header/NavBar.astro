@@ -18,8 +18,8 @@ const translatePath = useTranslatedPath(lang);
 ---
 <nav class="flex items-center justify-between h-full px-4">  
  
-  <img src='./logo.webp' height={65} width={225} alt='' />
-  <h1 class="sr-only">Massive Home</h1>
+  <img src='./logo.webp' height={65} width={225} alt={i18n.CEO_TITLE} />
+  <h1 class="sr-only">{i18n.CEO_TITLE}</h1>
   <div class="flex gap-4">
       <NavLink href={translatePath('/nuevo/')}>{t('nav.new')}</NavLink>
       <NavLink href={translatePath('/categories/')}>{t('nav.catagories')}</NavLink>
