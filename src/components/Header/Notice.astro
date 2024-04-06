@@ -1,14 +1,25 @@
 ---
-const Message = 'Compra por caja minimo de $6,00.00';
+import { getI18N } from '@/i18n/index';
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
 ---
 
 <div
-  class='relative w-full h-6 bg-black text-white font-semibold flex flex-row justify-between'
+  class='relative w-full h-6 bg-black text-white font-semibold flex flex-row justify-center items-center lg:justify-between'
 >
-  <div class='box-header-message w-[400px]'>{Message}</div>
-  <div class='box-header-message w-[400px]'>{Message}</div>
-  <div class='box-header-message w-[400px]'>{Message}</div>
-  <div class='box-header-message w-[400px]'>{Message}</div>
+  <div class='box-header-message text-xs w-[390px] lg:w-[400px]'>
+    {i18n.HEADER_NOTICE_MESSAGE}
+  </div>
+  <div class='max-md:hidden box-header-message text-xs w-[390px] lg:w-[400px]'>
+    {i18n.HEADER_NOTICE_MESSAGE}
+  </div>
+  <div class='max-md:hidden box-header-message text-xs w-[390px] lg:w-[400px]'>
+    {i18n.HEADER_NOTICE_MESSAGE}
+  </div>
+  <div class='max-md:hidden box-header-message text-xs w-[390px] lg:w-[400px]'>
+    {i18n.HEADER_NOTICE_MESSAGE}
+  </div>
 </div>
 <style>
   @keyframes translateXAnimation {
