@@ -1,6 +1,7 @@
 ---
 import NavLink from '@/components/NavLink.astro';
 import HeartIcon from '@/components/icons/HeartIcon.astro';
+import MenuBarsIcon from '@/components/icons/MenuBarsIcon.astro';
 import SearchIcon from '@/components/icons/SearchIcon.astro';
 import ShoppingIcon from '@/components/icons/ShoppingIcon.astro';
 import UserIcon from '@/components/icons/UserIcon.astro';
@@ -19,8 +20,8 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<nav class='flex flex-col lg:flex-row items-center justify-between h-full px-4'>
-  <img src='./logo.webp' height={65} width={225} alt={i18n.CEO_TITLE} />
+<nav class='flex flex-row items-center justify-between h-full px-4'>
+  <img src='./logo.webp' class='w-24 lg:w-60' alt={i18n.CEO_TITLE} />
   <h1 class='sr-only'>{i18n.CEO_TITLE}</h1>
   <div class='hidden lg:flex lg:gap-4 font-semibold'>
     <NavLink
@@ -54,7 +55,7 @@ const translatePath = useTranslatedPath(lang);
       {t('nav.hot-sale')}
     </NavLink>
   </div>
-  
+
   <div class='flex gap-x-4 items-center'>
     <NavLink href='#'>
       <SearchIcon class='size-6 text-gray-600' />
@@ -67,6 +68,10 @@ const translatePath = useTranslatedPath(lang);
     </NavLink>
     <NavLink href='#'>
       <ShoppingIcon class='size-6 text-gray-600' />
+    </NavLink>
+
+    <NavLink href='#' class='lg:hidden'>
+      <MenuBarsIcon class='size-6 text-gray-600' />
     </NavLink>
   </div>
 </nav>

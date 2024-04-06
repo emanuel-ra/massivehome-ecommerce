@@ -3,13 +3,16 @@ import NavLink from '@/components/NavLink.astro';
 import ArrowRight from '@/components/icons/ArrrowRight.astro';
 ---
 
-<section class='relative grid grid-cols-1 lg:grid-cols-4 py-2 gap-3'>
+<section class='relative grid grid-cols-1 lg:grid-cols-4 py-2 lg:gap-3 '>
   <h2 class='sr-only'>Hot Sale</h2>
-  <img src='2.webp' alt='' />
-  <img src='3.webp' alt='' />
-  <img src='4.webp' alt='' />
-  <img src='5.webp' alt='' />
-  <NavLink href='#' class='absolute right-5 top-[50%] text-gray-600'>
+  <div class="w-full flex  items-center justify-center"><img src='2.webp' alt='' /></div>
+  <div class="w-full flex  items-center justify-center"><img src='3.webp' alt='' /></div>
+  <div class="w-full flex  items-center justify-center"><img src='4.webp' alt='' /></div>
+  <div class="w-full flex  items-center justify-center"><img src='5.webp' alt='' /></div>
+  <NavLink href='#' class='absolute right-5 top-[50%] text-gray-600 max-md:hidden'>
     <ArrowRight class='size-10' />
   </NavLink>
+  <div class="w-full lg:hidden bg-slate-900 text-white py-2 text-center">
+      Ver Mas
+  </div>
 </section>
