@@ -7,9 +7,9 @@ import ShoppingIcon from '@/components/icons/ShoppingIcon.astro';
 import UserIcon from '@/components/icons/UserIcon.astro';
 import { getI18N } from '@/i18n/index';
 import {
-getLangFromUrl,
-useTranslatedPath,
-useTranslations,
+  getLangFromUrl,
+  useTranslatedPath,
+  useTranslations,
 } from '@/i18n/utils';
 
 const { currentLocale } = Astro;
@@ -30,12 +30,14 @@ const translatePath = useTranslatedPath(lang);
     >
       {t('nav.new')}
     </NavLink>
-    <NavLink
-      class='hover:text-red-600 transition ease-in-out'
-      href={translatePath('/categories/')}
+
+    <button
+      class='hover:text-red-600 transition ease-in-out uppercase'
+      id='btnCategories'
     >
       {t('nav.catagories')}
-    </NavLink>
+    </button>
+
     <NavLink
       class='hover:text-red-600 transition ease-in-out'
       href={translatePath('/branches/')}
@@ -75,3 +77,15 @@ const translatePath = useTranslatedPath(lang);
     </NavLink>
   </div>
 </nav>
+<script>
+  import { $isOpen } from '../../stores/categoriesNavBarMenu.ts';
+
+  const toggleNavBarCategories = () => {
+    $isOpen.set(!$isOpen.get());
+    console.log($isOpen.get());
+  };
+
+  document
+    .getElementById('btnCategories')
+    ?.addEventListener('click', toggleNavBarCategories);
+</script>
