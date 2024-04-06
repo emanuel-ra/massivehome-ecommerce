@@ -1,44 +1,72 @@
 ---
-import NavLink from "@/components/NavLink.astro"
-import HeartIcon from "@/components/icons/HeartIcon.astro"
-import SearchIcon from "@/components/icons/SearchIcon.astro"
-import ShoppingIcon from "@/components/icons/ShoppingIcon.astro"
-import UserIcon from "@/components/icons/UserIcon.astro"
-import { getI18N } from "@/i18n/index"
-import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils"
+import NavLink from '@/components/NavLink.astro';
+import HeartIcon from '@/components/icons/HeartIcon.astro';
+import SearchIcon from '@/components/icons/SearchIcon.astro';
+import ShoppingIcon from '@/components/icons/ShoppingIcon.astro';
+import UserIcon from '@/components/icons/UserIcon.astro';
+import { getI18N } from '@/i18n/index';
+import {
+getLangFromUrl,
+useTranslatedPath,
+useTranslations,
+} from '@/i18n/utils';
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
-
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
-<nav class="flex items-center justify-between h-full px-4">  
- 
-  <img src='./logo.webp' height={65} width={225} alt={i18n.CEO_TITLE} />
-  <h1 class="sr-only">{i18n.CEO_TITLE}</h1>
-  <div class="flex gap-4">
-      <NavLink href={translatePath('/nuevo/')}>{t('nav.new')}</NavLink>
-      <NavLink href={translatePath('/categories/')}>{t('nav.catagories')}</NavLink>
-      <NavLink href={translatePath('/branches/')}>{t('nav.branches')}</NavLink>
-      <NavLink href={translatePath('/services/')}>{t('nav.services')}</NavLink>
-      <NavLink href={translatePath('/hot-sale/')}>{t('nav.hot-sale')}</NavLink>
-  </div>
 
-  <div class="flex gap-x-4 items-center">
-    <NavLink href="#">
-      <SearchIcon class="size-6 text-gray-600" />
+<nav class='flex flex-col lg:flex-row items-center justify-between h-full px-4'>
+  <img src='./logo.webp' height={65} width={225} alt={i18n.CEO_TITLE} />
+  <h1 class='sr-only'>{i18n.CEO_TITLE}</h1>
+  <div class='hidden lg:flex lg:gap-4 font-semibold'>
+    <NavLink
+      class='hover:text-red-600 transition delay-300 ease-linear'
+      href={translatePath('/nuevo/')}
+    >
+      {t('nav.new')}
     </NavLink>
-    <NavLink href="#">
-      <UserIcon class="size-6 text-gray-600" />
+    <NavLink
+      class='hover:text-red-600 transition ease-in-out'
+      href={translatePath('/categories/')}
+    >
+      {t('nav.catagories')}
     </NavLink>
-    <NavLink href="#">
-      <HeartIcon class="size-6 text-gray-600" />
+    <NavLink
+      class='hover:text-red-600 transition ease-in-out'
+      href={translatePath('/branches/')}
+    >
+      {t('nav.branches')}
     </NavLink>
-    <NavLink href="#">
-      <ShoppingIcon class="size-6 text-gray-600" />
+    <NavLink
+      class='hover:text-red-600 transition ease-in-out'
+      href={translatePath('/services/')}
+    >
+      {t('nav.services')}
+    </NavLink>
+    <NavLink
+      class='hover:text-red-600 transition ease-in-out'
+      href={translatePath('/hot-sale/')}
+    >
+      {t('nav.hot-sale')}
+    </NavLink>
+  </div>
+  
+  <div class='flex gap-x-4 items-center'>
+    <NavLink href='#'>
+      <SearchIcon class='size-6 text-gray-600' />
+    </NavLink>
+    <NavLink href='#'>
+      <UserIcon class='size-6 text-gray-600' />
+    </NavLink>
+    <NavLink href='#'>
+      <HeartIcon class='size-6 text-gray-600' />
+    </NavLink>
+    <NavLink href='#'>
+      <ShoppingIcon class='size-6 text-gray-600' />
     </NavLink>
   </div>
 </nav>

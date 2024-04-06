@@ -1,24 +1,26 @@
 ---
-const Message = 'Compra por caja minimo de $6,00.00'
+const Message = 'Compra por caja minimo de $6,00.00';
 ---
-<div class="relative w-full h-6 bg-black text-white font-semibold flex flex-row justify-between">
-    <div class="box-header-message">{Message} </div>
-    <div class="box-header-message">{Message} </div>
-    <div class="box-header-message">{Message} </div>
-    <div class="box-header-message">{Message} </div>
+
+<div
+  class='relative w-full h-6 bg-black text-white font-semibold flex flex-row justify-between'
+>
+  <div class='box-header-message w-[400px]'>{Message}</div>
+  <div class='box-header-message w-[400px]'>{Message}</div>
+  <div class='box-header-message w-[400px]'>{Message}</div>
+  <div class='box-header-message w-[400px]'>{Message}</div>
 </div>
-<style> 
-    @keyframes translateXAnimation {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(100%); /* Move it across the viewport width */
-        }
+<style>
+  @keyframes translateXAnimation {
+    0% {
+      transform: translateX(0);
     }
-    .box-header-message {       
-          
-        position: relative;
-        animation: translateXAnimation 10s linear infinite; 
+    100% {
+      transform: translateX(100%); /* Move it across the viewport width */
     }
+  }
+  .box-header-message {
+    position: relative;
+    animation: translateXAnimation 10s linear infinite;
+  }
 </style>
