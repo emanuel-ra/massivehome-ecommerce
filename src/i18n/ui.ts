@@ -32,7 +32,7 @@ export const ui = {
     'nav.cookies': 'Cookies',
   },
   en: {
-    'nav.en': 'Home',
+    'nav.home': 'Home',
     'nav.new': 'New!',
     'nav.catagories': 'Categories',
     'nav.branches': 'Branches',
