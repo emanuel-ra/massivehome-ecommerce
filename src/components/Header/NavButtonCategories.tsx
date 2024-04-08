@@ -3,14 +3,17 @@ import { useStore } from '@nanostores/react';
 
 interface Props {
     label:string
-    class:string
+    className:string
 }
 export function NavButtonCategories(props:Props) {
-    const { label, class } = props
- const $isOpen = useStore(isOpen);
+  const { label, className } = props
+  const $isOpen = useStore(isOpen);
   return (
-    <button className={`${class}`}>
-        {label}
+    <button
+      className={`${className} border-b-2 ${$isOpen ? 'border-slate-600' : 'border-transparent'}`}
+      onClick={() => isOpen.set(!$isOpen)}
+    >
+      {label}
     </button>
-  )
+  );
 }

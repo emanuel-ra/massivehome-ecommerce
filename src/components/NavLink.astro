@@ -20,7 +20,7 @@ const isActive = currentPath === href && checkActive;
   href={href}
   class:list={[
     className,
-    'uppercase',
+    'uppercase border-b',
     isActive ? 'border-white' : 'border-transparent',
   ]}
   {...restOfProps}
