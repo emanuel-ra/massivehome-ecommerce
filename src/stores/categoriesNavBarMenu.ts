@@ -1,2 +1,2 @@
 import { atom } from 'nanostores';
-export const isOpen = atom(true);
+export const isOpen = atom(false);
