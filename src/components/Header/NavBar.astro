@@ -6,7 +6,7 @@ import SearchIcon from '@/components/icons/SearchIcon.astro';
 import ShoppingIcon from '@/components/icons/ShoppingIcon.astro';
 import UserIcon from '@/components/icons/UserIcon.astro';
 import { NavCategories } from '@/components/Header/NavCategories.tsx';
-import {NavButtonCategories} from '@/components/Header/NavButtonCategories.tsx'
+import { NavButtonCategories } from '@/components/Header/NavButtonCategories.tsx';
 import { getI18N } from '@/i18n/index';
 
 import {
@@ -24,7 +24,9 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <nav class='relative flex flex-row items-center justify-between h-full'>
-  <img src='./logo.webp' class='w-24 lg:w-60 pl-4' alt={i18n.CEO_TITLE} />
+  <a href={`${currentLocale !== 'es' ? '/' + currentLocale : '/'}`}>
+    <img src='/logo.webp' class='w-24 lg:w-60 pl-4' alt={i18n.CEO_TITLE} />
+  </a>
   <h1 class='sr-only'>{i18n.CEO_TITLE}</h1>
   <div class='hidden lg:flex lg:gap-4 font-semibold'>
     <NavLink
@@ -39,18 +41,16 @@ const translatePath = useTranslatedPath(lang);
       className='hover:text-red-600 transition ease-in-out uppercase'
       label={t('nav.catagories')}
     />
-      
-    
 
     <NavLink
       class='hover:text-red-600 transition ease-in-out'
-      href={translatePath('/branches/')}
+      href={translatePath('/sucursales/')}
     >
       {t('nav.branches')}
     </NavLink>
     <NavLink
       class='hover:text-red-600 transition ease-in-out'
-      href={translatePath('/services/')}
+      href={translatePath('/servicios/')}
     >
       {t('nav.services')}
     </NavLink>

@@ -11,14 +11,14 @@ export function NavCategories() {
       <div className='w-full grid grid-cols-1 md:grid-cols-2'>
         <div className='grid grid-cols-1 md:grid-cols-3 px-4 py-4 border-r'>
           {categories.map((category, index) => (
-            <div className=''>
+            <div className='' key={index}>
               <a href='#' className='font-semibold text-lg'>
                 {category.name}
               </a>
               <div>
                 <ul>
-                  {category?.children?.map((child) => (
-                    <li>
+                  {category?.children?.map((child, index2) => (
+                    <li key={index2}>
                       <a href='#'>{child.name}</a>
                     </li>
                   ))}
@@ -30,7 +30,7 @@ export function NavCategories() {
         <div className='flex flex-col justify-center items-center gap-y-2'>
           <a href='#'>
             <img
-              src='./50OFF.webp'
+              src='/50OFF.webp'
               alt='hasta 50% OFF en productos seleccionados'
             />
           </a>
