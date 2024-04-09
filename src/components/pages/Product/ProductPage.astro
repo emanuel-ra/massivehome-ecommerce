@@ -1,0 +1,26 @@
+---
+import Header from '@/components/Header.astro';
+import { ProductCarrousel } from '@/components/Products/ProductCarrousel.tsx';
+import { getI18N } from '@/i18n';
+import type { Product } from '@/interfaces/products';
+import Layout from '@/layouts/Layout.astro';
+const { currentLocale } = Astro;
+
+const i18n = getI18N({ currentLocale });
+
+interface Props {
+  data: Product;
+}
+const { data } = Astro.props;
+---
+
+<Layout title={`${i18n.CEO_TITLE}`}>
+  <Header />
+  <main class='flex flex-col items-center py-10'>
+
+    <section class="w-full">
+      <ProductCarrousel client:load data={data} />
+    </section>
+
+  </main>
+</Layout>

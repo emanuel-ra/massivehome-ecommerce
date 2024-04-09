@@ -1,6 +1,6 @@
 import { isOpen } from '@/stores/categoriesNavBarMenu';
 import { useStore } from '@nanostores/react';
-import { categories } from '../mooks/categories';
+import { categories } from '../../mooks/categories';
 
 export function NavCategories() {
   const $isOpen = useStore(isOpen);
@@ -12,14 +12,14 @@ export function NavCategories() {
         <div className='grid grid-cols-1 md:grid-cols-3 px-4 py-4 border-r'>
           {categories.map((category, index) => (
             <div className='' key={index}>
-              <a href='#' className='font-semibold text-lg'>
+              <a href='/Productos/Categoria' className='font-semibold text-lg'>
                 {category.name}
               </a>
               <div>
                 <ul>
                   {category?.children?.map((child, index2) => (
                     <li key={index2}>
-                      <a href='#'>{child.name}</a>
+                      <a href='/Productos/Categoria'>{child.name}</a>
                     </li>
                   ))}
                 </ul>
