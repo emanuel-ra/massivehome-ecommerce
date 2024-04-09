@@ -65,7 +65,7 @@ export function ProductCarrousel(props:Props) {
         </button>
       </div>
       <div className='flex justify-center py-2 gap-x-2'>
-        {images?.map((image, index) => (
+        {images?.map((_, index) => (
           <span
             className={`block size-4 rounded-full border cursor-pointer ${current === index ? 'bg-black/80' : 'bg-white'}`}
             onClick={() => {
