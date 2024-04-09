@@ -1,5 +1,4 @@
 ---
-import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import HotSale from '@/components/HotSale.astro';
 import { getI18N } from '@/i18n';
@@ -13,16 +12,16 @@ const i18n = getI18N({ currentLocale });
 <Layout title={`${i18n.CEO_TITLE}`}>
   <Header />
   <Banner />
-  <main>
+  <main class="flex flex-col items-center">
     <div class="py-10 flex justify-center">
-      <img src='./logos.webp' class=" w-[900px] h-auto" alt='logotipos' />
+      <img src='/logos.webp' class=" w-[900px] h-auto" alt='logotipos' />
     </div>
 
     <HotSale />
     <CategoriesGrid />
   </main>
 
-  <Footer />
+ 
 </Layout>
 
 <style></style>

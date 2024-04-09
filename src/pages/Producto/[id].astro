@@ -1,0 +1,11 @@
+---
+import ProductPage from '@/components/pages/Product/ProductPage.astro';
+import { products } from '@/mooks/products';
+const { id } = Astro.params;
+const iid = id !== undefined ? +id : 0;
+const product = products.find((p) => p.id === iid);
+
+if (!product) return Astro.redirect('/404');
+---
+
+<ProductPage data={product} />

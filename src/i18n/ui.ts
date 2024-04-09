@@ -45,16 +45,16 @@ export const ui = {
 export const routes = {
   es: {
     nuevo: 'nuevo',
-    categories: 'categorias',
-    branches: 'sucursales',
-    services: 'servicios',
-    'hot-sale': 'liquidaciones',
+    //categories: 'categorías',
+    sucursales: 'sucursales',
+    servicios: 'servicios',
+    'hot-sale': 'hot-sale',
   },
   en: {
     nuevo: 'new',
-    categories: 'categories',
-    branches: 'branches',
-    services: 'services',
-    'hot-sale': 'hot sale',
+    //categories: 'categories',
+    sucursales: 'branches',
+    servicios: 'services',
+    'hot-sale': 'hot-sale',
   },
 };

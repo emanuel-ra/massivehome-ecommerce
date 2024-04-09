@@ -1,14 +1,18 @@
 ---
 import NavLink from '@/components/NavLink.astro';
 import HeartIcon from '@/components/icons/HeartIcon.astro';
+import MenuBarsIcon from '@/components/icons/MenuBarsIcon.astro';
 import SearchIcon from '@/components/icons/SearchIcon.astro';
 import ShoppingIcon from '@/components/icons/ShoppingIcon.astro';
 import UserIcon from '@/components/icons/UserIcon.astro';
+import { NavCategories } from '@/components/Header/NavCategories.tsx';
+import { NavButtonCategories } from '@/components/Header/NavButtonCategories.tsx';
 import { getI18N } from '@/i18n/index';
+
 import {
-getLangFromUrl,
-useTranslatedPath,
-useTranslations,
+  getLangFromUrl,
+  useTranslatedPath,
+  useTranslations,
 } from '@/i18n/utils';
 
 const { currentLocale } = Astro;
@@ -19,8 +23,10 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<nav class='flex flex-col lg:flex-row items-center justify-between h-full px-4'>
-  <img src='./logo.webp' height={65} width={225} alt={i18n.CEO_TITLE} />
+<nav class='relative flex flex-row items-center justify-between h-full'>
+  <a href={`${currentLocale !== 'es' ? '/' + currentLocale : '/'}`}>
+    <img src='/logo.webp' class='w-24 lg:w-60 pl-4' alt={i18n.CEO_TITLE} />
+  </a>
   <h1 class='sr-only'>{i18n.CEO_TITLE}</h1>
   <div class='hidden lg:flex lg:gap-4 font-semibold'>
     <NavLink
@@ -29,21 +35,22 @@ const translatePath = useTranslatedPath(lang);
     >
       {t('nav.new')}
     </NavLink>
+
+    <NavButtonCategories
+      client:load
+      className='hover:text-red-600 transition ease-in-out uppercase'
+      label={t('nav.catagories')}
+    />
+
     <NavLink
       class='hover:text-red-600 transition ease-in-out'
-      href={translatePath('/categories/')}
-    >
-      {t('nav.catagories')}
-    </NavLink>
-    <NavLink
-      class='hover:text-red-600 transition ease-in-out'
-      href={translatePath('/branches/')}
+      href={translatePath('/sucursales/')}
     >
       {t('nav.branches')}
     </NavLink>
     <NavLink
       class='hover:text-red-600 transition ease-in-out'
-      href={translatePath('/services/')}
+      href={translatePath('/servicios/')}
     >
       {t('nav.services')}
     </NavLink>
@@ -54,8 +61,8 @@ const translatePath = useTranslatedPath(lang);
       {t('nav.hot-sale')}
     </NavLink>
   </div>
-  
-  <div class='flex gap-x-4 items-center'>
+
+  <div class='flex gap-x-4 items-center pr-4'>
     <NavLink href='#'>
       <SearchIcon class='size-6 text-gray-600' />
     </NavLink>
@@ -68,5 +75,21 @@ const translatePath = useTranslatedPath(lang);
     <NavLink href='#'>
       <ShoppingIcon class='size-6 text-gray-600' />
     </NavLink>
+
+    <NavLink href='#' class='lg:hidden'>
+      <MenuBarsIcon class='size-6 text-gray-600' />
+    </NavLink>
   </div>
+
+  <NavCategories client:load />
 </nav>
+<script>
+  import { isOpen } from '../../stores/categoriesNavBarMenu.ts';
+  const toggleNavBarCategories = () => {
+    isOpen.set(!isOpen.get());
+  };
+
+  document
+    .getElementById('btnCategories')
+    ?.addEventListener('click', toggleNavBarCategories);
+</script>
